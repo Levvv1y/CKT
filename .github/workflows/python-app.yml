@@ -1,0 +1,23 @@
+name: Build SKT_Lev_koz EXE
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: [self-hosted, windows]
+    strategy:
+      fail-fast: false
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.12
+
+    - run: pip install numpy
+    - run: pyinstaller --onefile lab3__with_a.py
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: SKT_Lev_koz
+        path: dist/*
