@@ -1,4 +1,4 @@
-name: Build SKT_Lev_koz EXE
+name: Build SKT_Lev EXE
 
 on:
   push:
@@ -19,5 +19,5 @@ jobs:
 
     - uses: actions/upload-artifact@v3
       with:
-        name: SKT_Lev_koz
+        name: SKT_Lev
         path: dist/*
